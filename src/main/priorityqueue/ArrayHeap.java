@@ -18,111 +18,82 @@ public class ArrayHeap<T extends Comparable<T>> implements PriorityQueue<T> {
   // Orders the elements by their natural ordering.
   @SuppressWarnings("unchecked")
   public ArrayHeap() {
-    heap = (T[]) new Comparable[10];
-    size = 0;
-    comparator = null;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   // Orders the elements by the given comparator.
   @SuppressWarnings("unchecked")
   public ArrayHeap(Comparator<T> comparator) {
-    heap = (T[]) new Comparable[10];
-    size = 0;
-    this.comparator = comparator;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public int size() {
-    return size;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public T peek() {
-    if (size == 0) {
-      throw new NoSuchElementException();
-    }
-    return heap[0];  // the highest-priority element is always at the root
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public void add(T item) {
-    if (item == null) {
-      throw new IllegalArgumentException();
-    }
-    if (size == heap.length) {
-      grow();
-    }
-    heap[size] = item;  // the next open slot
-    size++;
-    swim(size - 1);
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public void remove() {
-    if (size == 0) {
-      throw new NoSuchElementException();
-    }
-    heap[0] = heap[size - 1];  // move the last element into the root
-    heap[size - 1] = null;     // clear the vacated slot
-    size--;
-    if (size > 0) {
-      sink(0);
-    }
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   // Returns a negative number if a has higher priority than b, zero if they
   // tie, and a positive number if a has lower priority.
   private int compare(T a, T b) {
-    if (comparator != null) {
-      return comparator.compare(a, b);
-    }
-    return a.compareTo(b);
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   // The parent of the node at index i. Pre: i > 0.
   private int parent(int i) {
-    return (i - 1) / 2;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   // The left child of the node at index i.
   private int leftChild(int i) {
-    return 2 * i + 1;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   // The right child of the node at index i.
   private int rightChild(int i) {
-    return 2 * i + 2;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   // Exchanges the elements at indices i and j.
   private void swap(int i, int j) {
-    T temp = heap[i];
-    heap[i] = heap[j];
-    heap[j] = temp;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   // Moves the element at index i up until it does not outrank its parent.
   private void swim(int i) {
-    while (i > 0 && compare(heap[i], heap[parent(i)]) < 0) {
-      swap(i, parent(i));
-      i = parent(i);
-    }
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   // Moves the element at index i down until no child outranks it.
   private void sink(int i) {
-    while (leftChild(i) < size) {  // stop at a leaf
-      int best = leftChild(i);
-      int right = rightChild(i);
-      if (right < size && compare(heap[right], heap[best]) < 0) {
-        best = right;
-      }
-      if (compare(heap[best], heap[i]) >= 0) {
-        break;  // no child outranks the element
-      }
-      swap(i, best);
-      i = best;
-    }
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   // Doubles the capacity.
