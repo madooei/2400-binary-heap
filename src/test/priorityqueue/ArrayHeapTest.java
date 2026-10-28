@@ -70,8 +70,12 @@ public class ArrayHeapTest extends PriorityQueueTest {
 
   @Test
   public void addToAFullArrayDoublesItsCapacity() {
-    ArrayHeap<Integer> heap = heapOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11);
-    assertEquals(20, arrayOf(heap).length);
+    ArrayHeap<Integer> heap = new ArrayHeap<>();
+    int capacity = arrayOf(heap).length;
+    for (int i = 0; i <= capacity; i++) {  // one more than fits
+      heap.add(i);
+    }
+    assertEquals(2 * capacity, arrayOf(heap).length);
   }
 
   @Test
