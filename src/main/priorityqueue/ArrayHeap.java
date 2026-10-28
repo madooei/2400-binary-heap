@@ -16,11 +16,8 @@ public class ArrayHeap<T extends Comparable<T>> implements PriorityQueue<T> {
   private Comparator<T> comparator;  // null means use natural ordering
 
   // Orders the elements by their natural ordering.
-  @SuppressWarnings("unchecked")
   public ArrayHeap() {
-    heap = (T[]) new Comparable[10];
-    size = 0;
-    comparator = null;
+    this(null); // calls the other constructor with a null comparator
   }
 
   // Orders the elements by the given comparator.

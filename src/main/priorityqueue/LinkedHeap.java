@@ -27,9 +27,7 @@ public class LinkedHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 
   // Orders the elements by their natural ordering.
   public LinkedHeap() {
-    root = null;
-    size = 0;
-    comparator = null;
+    this(null); // calls the other constructor with a null comparator
   }
 
   // Orders the elements by the given comparator.
