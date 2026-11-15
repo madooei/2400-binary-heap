@@ -52,9 +52,9 @@ public class ArrayHeap<T extends Comparable<T>> implements PriorityQueue<T> {
     throw new UnsupportedOperationException("TODO: Implement me");
   }
 
-  // Returns a negative number if a has higher priority than b, zero if they
-  // tie, and a positive number if a has lower priority.
-  private int compare(T a, T b) {
+  // Returns a negative number if first has higher priority than second,
+  // zero if they tie, and a positive number if first has lower priority.
+  private int compare(T first, T second) {
     // TODO: Implement me
     throw new UnsupportedOperationException("TODO: Implement me");
   }
