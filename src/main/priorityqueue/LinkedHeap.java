@@ -91,13 +91,13 @@ public class LinkedHeap<T extends Comparable<T>> implements PriorityQueue<T> {
     sink(root);
   }
 
-  // Returns a negative number if a has higher priority than b, zero if they
-  // tie, and a positive number if a has lower priority.
-  private int compare(T a, T b) {
+  // Returns a negative number if first has higher priority than second,
+  // zero if they tie, and a positive number if first has lower priority.
+  private int compare(T first, T second) {
     if (comparator != null) {
-      return comparator.compare(a, b);
+      return comparator.compare(first, second);
     }
-    return a.compareTo(b);
+    return first.compareTo(second);
   }
 
   // The directions from the root to the node at position, one character per
@@ -107,11 +107,11 @@ public class LinkedHeap<T extends Comparable<T>> implements PriorityQueue<T> {
     return binary.substring(1);  // drop the leading 1, which is the root
   }
 
-  // Exchanges the values of nodes a and b. The nodes stay where they are.
-  private void swapValues(Node<T> a, Node<T> b) {
-    T temp = a.value;
-    a.value = b.value;
-    b.value = temp;
+  // Exchanges the values of nodes first and second. The nodes stay where they are.
+  private void swapValues(Node<T> first, Node<T> second) {
+    T temp = first.value;
+    first.value = second.value;
+    second.value = temp;
   }
 
   // Swaps the values of parent and child if the child outranks the parent.

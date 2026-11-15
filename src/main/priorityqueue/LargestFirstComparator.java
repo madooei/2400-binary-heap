@@ -6,7 +6,7 @@ import java.util.Comparator;
 public class LargestFirstComparator implements Comparator<Integer> {
 
   @Override
-  public int compare(Integer a, Integer b) {
-    return Integer.compare(b, a);
+  public int compare(Integer first, Integer second) {
+    return Integer.compare(second, first);
   }
 }

@@ -67,13 +67,13 @@ public class ArrayHeap<T extends Comparable<T>> implements PriorityQueue<T> {
     }
   }
 
-  // Returns a negative number if a has higher priority than b, zero if they
-  // tie, and a positive number if a has lower priority.
-  private int compare(T a, T b) {
+  // Returns a negative number if first has higher priority than second,
+  // zero if they tie, and a positive number if first has lower priority.
+  private int compare(T first, T second) {
     if (comparator != null) {
-      return comparator.compare(a, b);
+      return comparator.compare(first, second);
     }
-    return a.compareTo(b);
+    return first.compareTo(second);
   }
 
   // The parent of the node at index i. Pre: i > 0.
