@@ -22,14 +22,16 @@ code/
         LinkedHeap.java                 # binary heap built from linked nodes
         ArrayHeap.java                  # binary heap stored in an array
         LargestFirstComparator.java     # orders integers from largest to smallest
-        Main.java                       # demo entry point (the emergency room)
+      demo/                             # one demo per heap, the emergency room example
+        LinkedHeapDemo.java
+        ArrayHeapDemo.java
     test/
       priorityqueue/
         PriorityQueueTest.java          # abstract: the PriorityQueue contract suite
         LinkedHeapTest.java             # runs the suite against LinkedHeap, plus shape tests
         ArrayHeapTest.java              # runs the suite against ArrayHeap, plus shape tests
   scripts/
-    run.sh                              # compile and run the demo (priorityqueue.Main)
+    run.sh                              # compile and run one demo
     test.sh                             # compile and run every JUnit test
 ```
 
@@ -37,7 +39,7 @@ code/
 
 - `scripts/test.sh` — compiles everything and runs the full JUnit suite.
 - `scripts/test.sh priorityqueue.LinkedHeapTest` — compiles everything and runs only that test class.
-- `scripts/run.sh` — compiles everything and runs the `Main` demo.
+- `scripts/run.sh demo.ArrayHeapDemo` — compiles everything and runs that one demo. Every class you implement has its own demo.
 
 ## What's here
 
@@ -46,6 +48,6 @@ code/
 - `priorityqueue.ArrayHeap<T>` — the heap stored in an array in level order. A node's parent and children are found by index arithmetic, and `swim` and `sink` are loops. The array doubles when it fills.
 - Both heaps take an optional `Comparator` in a second constructor. A comparator that reverses the order turns the min-heap into a max-heap.
 - `priorityqueue.LargestFirstComparator` — a `Comparator<Integer>` that reverses the natural ordering. The demo and the tests pass it to a heap to make a max-heap.
-- `priorityqueue.Main` — a runnable demo of the emergency room example, run on both heaps, and a max-heap made with a reversed comparator.
+- `demo.LinkedHeapDemo` and `demo.ArrayHeapDemo` — one demo per heap, each on the emergency room example. `ArrayHeapDemo` also makes a max-heap with a reversed comparator.
 - `priorityqueue.PriorityQueueTest` — the abstract contract suite.
 - `priorityqueue.LinkedHeapTest` and `priorityqueue.ArrayHeapTest` — each runs the contract suite against one heap, then checks the comparator constructor and, by reading the heap's private fields, the shape of the heap after each add and remove.
