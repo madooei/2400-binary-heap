@@ -41,7 +41,7 @@ code/
 - `scripts/test.sh priorityqueue.LinkedHeapTest` — compiles everything and runs only that test class.
 - `scripts/run.sh demo.ArrayHeapDemo` — compiles everything and runs that one demo. Every class you implement has its own demo.
 
-## What's here
+## Contents
 
 - `priorityqueue.PriorityQueue<T>` — the PriorityQueue contract from the priority queue chapter: `add`, `peek`, `remove`, and `size`. The smallest element has the highest priority.
 - `priorityqueue.LinkedHeap<T>` — the heap built from nodes with `left` and `right` references. It finds the next open slot and the last node by writing the position in binary. `add` is recursive and swims the new value up on the way back, so the nodes need no `parent` reference. `sink` is recursive too.
